@@ -21,7 +21,7 @@ public class UserController {
 
     @GetMapping
     public String welcome() {
-        return "HOME PAGE";
+        return "HOME PAGE for the target app";
     }
 
     @GetMapping("/users")
