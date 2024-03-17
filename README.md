@@ -34,4 +34,6 @@ Would the product be close to its expiration date, the system will just send an 
   * manage adding new products, along with their images, expiration and delivery dates,
   * show all the products in the database (preferably paginated to avoid overloading the server),
   * show the user/worker who added the product to know who to talk to if something happens to the said product
++ Also add a "category" column to each product so that they can be filtered into sub groups (categories) for easier searching
++ that also means adding a new button to CREATE a new category, and integrate it with database, so that every category (both already created and new ones) get their respective items under them
   
