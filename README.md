@@ -25,15 +25,20 @@ Would the product be close to its expiration date, the system will just send an 
 
 
 ## Goals
-+ Add spring security to the project and make it work on basic dummy tests
-+ Integrate the Twilio API to get alerts when a product is close to its expiration date
++ Integrate the Twilio API (for mobile msg) or other API (for whatsapp msg) to get alerts when a product is close to its expiration date
 + Make a new DB table to keep track of the users and their "posts" to know who added which products to the server (which basically adds up to 3 DBs at total, 1 of which is a "connection" one)
 + Make a fully functioning frontend and integrate it with backend
-+ For the frontend, add a simple register form, login form
 + Also add UI to:
   * manage adding new products, along with their images, expiration and delivery dates,
   * show all the products in the database (preferably paginated to avoid overloading the server),
   * show the user/worker who added the product to know who to talk to if something happens to the said product
 + Also add a "category" column to each product so that they can be filtered into sub groups (categories) for easier searching
 + that also means adding a new button to CREATE a new category, and integrate it with database, so that every category (both already created and new ones) get their respective items under them
++ There should be 3 dates:
+   * a delivery date (when the product arrived)
+   * an accepted into system date (when the product was accepted and put into the system)
+   * an expiration date 
+  ### *Eventually:
+  + Add spring security to the project and make it work on basic dummy tests
+  + For the frontend, add a simple register form, login form
   
