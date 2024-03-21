@@ -26,7 +26,7 @@ Would the product be close to its expiration date, the system will just send an 
 
 ## Goals
 + Integrate the Twilio API (for mobile msg) or other API (for whatsapp msg) to get alerts when a product is close to its expiration date
-+ Make a new DB table to keep track of the users and their "posts" to know who added which products to the server (which basically adds up to 3 DBs at total, 1 of which is a "connection" one)
++ Make a new DB table to keep track of the users and their "posts" to know who added which products to the server (which basically adds up to 3 tables at total, 1 of which is a "connection" one)
 + Make a fully functioning frontend and integrate it with backend
 + Also add UI to:
   * manage adding new products, along with their images, expiration and delivery dates,
