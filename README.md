@@ -21,7 +21,7 @@ The frontend is made mainly with ReactJS and some lightweight styling libraries 
 The application is basically a cloud database, which main purpose is to serve as a reminder of possible close expiration dates.  
 It uses spring security to ensure the personal info is kept secure.  
 The application allows to maintain the products in the store, their expiration dates as well as delivery dates to keep track of any formalities.
-Would the product be close to its expiration date, the system will just send an alert message to the person responsible for its unloading to the shelf and therefore help to keep any product from being spoiled on a shelf. 
+Would the product be close to its expiration date, the system will just send an alert message to the person responsible for its unloading and therefore help keep any product from spoiling on a shelf. 
 
 
 ## Goals
