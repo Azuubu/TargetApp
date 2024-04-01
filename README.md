@@ -44,4 +44,11 @@ Would the product be close to its expiration date, the system will just send an 
   ### *Eventually:
   + Add spring security to the project and make it work on basic dummy tests
   + For the frontend, add a simple register form, login form
+ 
+    # Next step addition:
+    + Add product form to add new products to the db
+    + Add category form to add new category to the db
+    + Add search functionalities to the product tab and more specific filters, such as RANGE slider for (expiration?), category selection, and searchbar searching through the product's name 
+    + Add search functionality to the category tab to look for specific category
+    + Finally, integrate the frontend with backend using fetch / try calls
   
