@@ -51,4 +51,7 @@ Would the product be close to its expiration date, the system will just send an 
     + Add search functionalities to the product tab and more specific filters, such as RANGE slider for (expiration?), category selection, and searchbar searching through the product's name 
     + Add search functionality to the category tab to look for specific category
     + Finally, integrate the frontend with backend using fetch / try calls
+    + Work a bit on proper fetching rules, find the best practices, handle errors (both when the request denies, and just when checking validity of data [!! STILL VALIDATE ALL THE DATA IN THE BACKEND!!!]) The UI validation is just for the user!!! The server needs backend validation :)
+    + Add clearing inputs after successful submition of a form
+      
   
