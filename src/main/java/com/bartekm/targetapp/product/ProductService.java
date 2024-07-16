@@ -10,11 +10,11 @@ public interface ProductService {
 
     Product findProductById(int id);
 
+    Product findProductByName(String name);
+
     List<Product> findProductsByExpirationDate(String expirationDate);
 
     List<Product> findProductsByDeliveryDate(String deliveryDate);
-
-    List<Product> findProductsByAuthorId(int id);
 
     Product updateProduct(Product product);
 

@@ -5,7 +5,7 @@ import org.springframework.stereotype.Service;
 import java.util.List;
 
 @Service
-public class ProductServiceImpl implements ProductService {
+public class ProductServiceImpl implements ProductService{
 
     private final ProductRepository productRepository;
 
@@ -13,11 +13,13 @@ public class ProductServiceImpl implements ProductService {
         this.productRepository = productRepository;
     }
 
+    // POST ==========================================================================
     @Override
     public Product addProduct(Product product) {
         return productRepository.save(product);
     }
 
+    // GET ==========================================================================
     @Override
     public List<Product> getAllProducts() {
         return productRepository.findAll();
@@ -26,6 +28,11 @@ public class ProductServiceImpl implements ProductService {
     @Override
     public Product findProductById(int id) {
         return productRepository.findById(id).get();
+    }
+
+    @Override
+    public Product findProductByName(String name) {
+        return productRepository.findByName(name);
     }
 
     @Override
@@ -38,16 +45,18 @@ public class ProductServiceImpl implements ProductService {
         return productRepository.findByDeliveryDate(deliveryDate);
     }
 
-    @Override
-    public List<Product> findProductsByAuthorId(int authorId) {
-        return productRepository.findByAuthorId(authorId);
-    }
+//    @Override
+//    public List<Product> findProductsByAuthorId(int authorId) {
+//        return productRepository.findByAuthorId(authorId);
+//    }
 
+    // PUT =============================================================================
     @Override
     public Product updateProduct(Product product) {
         return productRepository.save(product);
     }
 
+    // DELETE ========================================================================
     @Override
     public Boolean deleteById(int id) {
         productRepository.deleteById(id);

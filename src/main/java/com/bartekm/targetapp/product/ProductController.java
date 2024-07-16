@@ -10,7 +10,8 @@ import java.util.List;
 import static org.springframework.web.servlet.support.ServletUriComponentsBuilder.fromCurrentRequest;
 
 @RestController
-@RequestMapping(path = "/pr")
+@RequestMapping(path = "/products")
+@CrossOrigin
 public class ProductController {
 
     private final ProductService productService;
@@ -19,23 +20,38 @@ public class ProductController {
         this.productService = productService;
     }
 
-    @GetMapping("/products")
+    @GetMapping()
     public ResponseEntity<List<Product>> getAllProducts() {
         return ResponseEntity.ok(productService.getAllProducts());
     }
 
-    @GetMapping("/products/{id}")
+    @GetMapping("/{id}")
     public ResponseEntity<Product> getProductById(@PathVariable("id")int id) {
         return ResponseEntity.ok(productService.findProductById(id));
     }
 
-    @PostMapping()
-    public ResponseEntity<Product> addProduct(@RequestBody Product product) {
-        product.setId(productService.getAllProducts().size() + 1);
-        return ResponseEntity.created(getLocation(product.getId())).body(productService.addProduct(product));
+    @GetMapping("/{name}")
+    public ResponseEntity<Product> getProductByName(@PathVariable("name")String name) {
+        return ResponseEntity.ok(productService.findProductByName(name));
     }
 
-    @DeleteMapping("/products/{id}")
+//    @PostMapping()
+//    public ResponseEntity<Product> addProduct(@RequestBody Product product) {
+//        product.setId(productService.getAllProducts().size() + 1);
+//        return ResponseEntity.created(getLocation(product.getId())).body(productService.addProduct(product));
+//    }
+
+    @PostMapping()
+    public Product addProduct(@RequestBody Product product) {
+        //product.setId(productService.getAllProducts().size() + 1);
+        // calkiem wywalic to ^
+        System.out.println("===========");
+        System.out.println(product.toString());
+        System.out.println("===========");
+        return productService.addProduct(product);
+    }
+
+    @DeleteMapping("/{id}")
     public ResponseEntity<Boolean> deleteProduct(@PathVariable("id")int id) {
         return ResponseEntity.ok(productService.deleteById(id));
     }

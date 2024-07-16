@@ -39,5 +39,5 @@ public class UserServiceImpl implements UserService {
         return Boolean.TRUE;
     }
 
-    // other business should be located here
+    // other business logic should be located here
 }

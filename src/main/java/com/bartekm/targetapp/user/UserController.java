@@ -9,7 +9,7 @@ import java.util.List;
 import static org.springframework.web.servlet.support.ServletUriComponentsBuilder.fromCurrentRequest;
 
 @RestController
-@RequestMapping(path = "/us")
+@RequestMapping(path = "/users")
 public class UserController {
 
     private final UserService userService;
@@ -18,18 +18,12 @@ public class UserController {
         this.userService = userService;
     }
 
-
-    @GetMapping
-    public String welcome() {
-        return "HOME PAGE for the target app";
-    }
-
-    @GetMapping("/users")
+    @GetMapping()
     public ResponseEntity<List<User>> getAllUsers() {
        return ResponseEntity.ok(userService.getAllUsers());
     }
 
-    @GetMapping("/users/{id}")
+    @GetMapping("/{id}")
     public ResponseEntity<User> getUserById(@PathVariable("id")int id) {
         return ResponseEntity.ok(userService.findUserById(id));
     }
@@ -40,7 +34,7 @@ public class UserController {
         return ResponseEntity.created(getLocation(user.getId())).body(userService.createUser(user));
     }
 
-    @DeleteMapping("/users/{id}")
+    @DeleteMapping("/{id}")
     public ResponseEntity<Boolean> deleteUser(@PathVariable("id")int id) {
         return ResponseEntity.ok(userService.deleteById(id));
     }
